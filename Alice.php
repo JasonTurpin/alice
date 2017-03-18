@@ -71,6 +71,7 @@ class Alice {
             return false;
         }
 
+        $output = '<p>';
         for ($count = 0; $count <= $sentenceCount; $count++) {
             $completed = false;
             $str       = $this->startData[mt_rand(0, count($this->startData) - 1)];
@@ -86,7 +87,8 @@ class Alice {
                 $str .= ' '.$word;
                 $completed = $wordCount++ > $sentenceLength && in_array($word, $this->endData);
             }
-            echo trim($str).'.  ';
+            $output .= trim($str).'.  ';
         }
+        echo $output.'</p>';
     }
 }
